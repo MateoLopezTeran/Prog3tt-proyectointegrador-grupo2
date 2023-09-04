@@ -7,7 +7,6 @@ class Conteiner extends Component {
       super();
       this.state = {
         peliculas: [], //aparecer personajes
-        nextUrl: "",
         peliculasFavoritas: [],
       };
     }
@@ -19,9 +18,19 @@ class Conteiner extends Component {
           .then((data) =>
             this.setState({
               peliculas: data.results,
-              nextUrl: data.info.next,
             })
           )
           .catch();
     }
+
+    borrar(id) {
+        let peliculasFiltradas = this.state.personajes.filter(
+          (unaPelicula) => unaPelicula.id !== id
+        );
+        this.setState({
+          peliculas: peliculasFiltradas,
+        });
+    }
 }
+
+export default Conteiner
