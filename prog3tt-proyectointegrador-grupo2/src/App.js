@@ -4,7 +4,7 @@ import Home from "./screen/Home/Home";
 import Detail from "./screen/Detail/Detail";
 import Buscador from "./screen/Buscador/Buscador";
 import Favoritos from "./screen/Favoritos/Favoritos";
-import NoEncontrada from "./screen/NoEcontrada/NoEncontrada";
+import NoEncontrada from "./screen/NoEncontrada/NoEncontrada";
 
 function App() {
   return (
