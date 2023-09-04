@@ -1,16 +1,12 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 
-function Home() {
+function Footer() {
   return (
     <React.Fragment>
-      <Navbar />
       <h1>Pagina principal</h1>
       <p>Descripcion de la home</p>
-      <Footer />
     </React.Fragment>
   );
 }
 
-export default Home;
+export default Footer;
