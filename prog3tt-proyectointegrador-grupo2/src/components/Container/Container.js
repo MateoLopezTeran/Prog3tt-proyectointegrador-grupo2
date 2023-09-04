@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CharacterCard from "../CharacterCard/CharacterCard";
+import Card from "../CharacterCard/CharacterCard";
 import "./characters.css";
 
 class Container extends Component {
@@ -40,7 +40,7 @@ class Container extends Component {
             <section className="cardContainer">
               {this.state.peliculas.map((unaPelicula, idx) => (
                 <Card
-                  key={unaPelicula/* .name + idx */}
+                  key={unaPelicula.name}
                   datosPelicula={unaPelicula}
                   borrar={(id) => this.borrar(id)}
                 />
