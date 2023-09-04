@@ -16,3 +16,4 @@ function Favoritos() {
 }
 console.log(favoritosPelis);
 
+export default Favoritos;
