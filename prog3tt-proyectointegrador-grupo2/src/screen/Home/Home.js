@@ -10,11 +10,11 @@ function Home() {
 
         <h3>Peliculas populares</h3>
         <section id="pelisPopulares" class="seccionPeliSerie"></section>
-        <Card/>
+        <Conteiner/>
 
         <h3>Series populares</h3>
         <section id="seriesPopulares" class="seccionPeliSerie"></section>
-        <CardSerie/>
+        <Conteiner/>
 
         <Footer/>
     </React.Fragment>
