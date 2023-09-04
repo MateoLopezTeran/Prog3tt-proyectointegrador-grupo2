@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import Container from "../../components/Container/Container";
 
 function Home() {
   return (
@@ -10,11 +11,11 @@ function Home() {
 
         <h3>Peliculas populares</h3>
         <section id="pelisPopulares" class="seccionPeliSerie"></section>
-        <Conteiner/>
+        <Container/>
 
         <h3>Series populares</h3>
         <section id="seriesPopulares" class="seccionPeliSerie"></section>
-        <Conteiner/>
+        <Container/>
 
         <Footer/>
     </React.Fragment>

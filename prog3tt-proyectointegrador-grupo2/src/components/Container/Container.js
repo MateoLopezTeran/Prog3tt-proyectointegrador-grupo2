@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CharacterCard from "../CharacterCard/CharacterCard";
 import "./characters.css";
 
-class Conteiner extends Component {
+class Container extends Component {
     constructor() {
       super();
       this.state = {
@@ -31,6 +31,24 @@ class Conteiner extends Component {
           peliculas: peliculasFiltradas,
         });
     }
+
+    render() {
+        console.log(this.state.peliculasFavoritas);
+        return (
+          <React.Fragment>
+            <button onClick={() => this.traerMas()}> Traer más </button>
+            <section className="cardContainer">
+              {this.state.peliculas.map((unaPelicula, idx) => (
+                <Card
+                  key={unaPelicula/* .name + idx */}
+                  datosPelicula={unaPelicula}
+                  borrar={(id) => this.borrar(id)}
+                />
+              ))}
+            </section>
+          </React.Fragment>
+        );
+      }
 }
 
-export default Conteiner
+export default Container
