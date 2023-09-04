@@ -14,6 +14,9 @@ function Navbar() {
         <li>
           <Link to="/Detail">Detail</Link>
         </li>
+        <li>
+          <Link to="/Buscador/:id">Buscador</Link>
+        </li>
       </ul>
     </nav>
   );
