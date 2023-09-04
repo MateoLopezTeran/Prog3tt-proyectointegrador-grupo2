@@ -8,11 +8,17 @@ console.log(recupeStoragePelis);
 
 let favoritosPelis = JSON.parse(recupeStoragePelis);
 function Favoritos() {
-    <React.Fragment>
+    return (
+        <React.Fragment>
         <Navbar/>
+
         <h1>Favoritos</h1>
+        <section id="favoritosPelis" class="seccionPeliSerie"></section>
         <Container/>
-    </React.Fragment>
+
+        </React.Fragment>
+    );
+    
 }
 console.log(favoritosPelis);
 
