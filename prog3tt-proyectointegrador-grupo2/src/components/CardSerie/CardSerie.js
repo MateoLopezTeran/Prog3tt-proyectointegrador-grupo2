@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/* import React, { Component } from "react";
 import Card from "../Card/Card";
 
 class CardSerie extends Component{
@@ -7,4 +7,4 @@ class CardSerie extends Component{
     }
 }
 
-export default CardSerie;
+export default CardSerie; */

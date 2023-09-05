@@ -58,5 +58,24 @@ class Card extends Component {
     
         localStorage.setItem("pelicula", peliculasFinales);
     }
+
+    render() {
+        return (
+          <article className="peliOSerie">
+            {/* <Link to={`/peliculas/${this.props.datosPelicula.id}`}>
+              <img src={this.props.datosPelicula.poster_path} alt="" />
+            </Link> */}
+            <h3>{this.props.datosPelicula.title}</h3>
+            <img src={this.props.datosPelicula.poster_path} alt="" />
+            <p className="linkADetalle">Ver más</p>
+            <p className="linkADetalle" onClick={() => this.props.borrar(this.props.datosPelicula.id)}>
+              Borrar
+            </p>
+            <button onClick={() => this.agregarQuitarFavoritos()}>
+              {this.state.textoFavoritos}
+            </button>
+          </article>
+        );
+    }
 }
 export default Card;
