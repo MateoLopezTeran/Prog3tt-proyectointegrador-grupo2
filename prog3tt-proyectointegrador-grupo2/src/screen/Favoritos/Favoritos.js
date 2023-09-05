@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "../../components/Container/Container";
 import Navbar from "../../components/Navbar/Navbar"
+import Footer from "../../components/Footer/Footer";
 
 /* Recuperamos el Local Storage de las peliculas favoritas */
 let recupeStoragePelis = localStorage.getItem('favoritosPelis');
@@ -15,7 +16,7 @@ function Favoritos() {
         <h1>Favoritos</h1>
         <section id="favoritosPelis" class="seccionPeliSerie"></section>
         <Container/>
-
+        <Footer/>
         </React.Fragment>
     );
     
