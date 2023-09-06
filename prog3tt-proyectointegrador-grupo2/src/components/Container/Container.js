@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Card from "../Card/Card";
-import Buscador from "../../screen/Buscador/Buscador";
 
 class Container extends Component {
   constructor() {
@@ -31,20 +30,19 @@ class Container extends Component {
       });
   }
 
-  filtrarPelioSerie(){
+  /* filtrarPelioSerie(){
     let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
         return pelicula.name.toLowerCase().includes();
     })
     this.setState({
       peliculas: peliculasFiltradas
     })
-  }
+  } */
 
   render() {
     console.log(this.state.peliculasFavoritas);
     return (
       <React.Fragment>
-        <Buscador filtro={(this.filtrarPelioSerie())}/>
         <button onClick={() => this.traerMas()}> Traer más </button>
         <section className="seccionPeliSerie">
           {this.state.peliculas.map((unaPelicula, idx) => (
@@ -60,4 +58,4 @@ class Container extends Component {
   }
 }
 
-export default Container
+export default Container;
