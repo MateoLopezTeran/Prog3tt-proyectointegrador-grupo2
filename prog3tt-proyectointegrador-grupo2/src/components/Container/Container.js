@@ -30,14 +30,14 @@ class Container extends Component {
       });
   }
 
-  /* filtrarPelioSerie(){
+   filtrarPelioSerie(){
     let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
         return pelicula.name.toLowerCase().includes();
     })
     this.setState({
       peliculas: peliculasFiltradas
     })
-  } */
+  } 
 
   render() {
     console.log(this.state.peliculasFavoritas);
