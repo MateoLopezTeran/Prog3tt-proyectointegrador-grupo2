@@ -7,9 +7,9 @@ function Home() {
   return (
     <React.Fragment>
         <Navbar/>
-        <h1>Home</h1>
+        <h1>Wawa Max</h1>
 
-        <h3>Peliculas populares</h3>
+        <h3 className="h3">Peliculas populares</h3>
         <section id="pelisPopulares" class="seccionPeliSerie"></section>
         <Container/>
 

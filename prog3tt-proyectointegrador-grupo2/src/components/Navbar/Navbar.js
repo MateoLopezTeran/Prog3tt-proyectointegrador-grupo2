@@ -4,23 +4,25 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 function Navbar() {
   return (
     <nav>
-      <ul className="headerDerecha">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/Favoritos">Favorites</Link>
-        </li>
-        <li>
-          <Link to="/Detail">Detail</Link>
-        </li>
-        <li>
-          <Link to="/Buscador/:id">Buscador</Link>
-        </li>
-      </ul>
+      <article className="headerIzquierda">
+        <section>
+          <Link className="botonesHeader" to="/">Home</Link>
+        </section>
+        <section>
+          <Link className="botonesHeader" to="/Favoritos">Favoritos</Link>
+        </section>
+        <section>
+          <Link className="botonesHeader" to="/Detail">Detalle</Link>
+        </section>
+        <section>
+          <Link className="botonesHeader" to="/Buscador/:id">Buscador</Link>
+        </section>
+      </article>
     </nav>
   );
 }
+
+<Link className="botonesHeader" to="/">Home</Link>
 
 export default Navbar;
 
