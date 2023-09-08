@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import Formulario from "../Formulario/Formulario";
 
 function Navbar() {
   return (
@@ -11,12 +12,16 @@ function Navbar() {
         <section>
           <Link className="botonesHeader" to="/Favoritos">Favoritos</Link>
         </section>
+        <Formulario/>
         <section>
+        
+        </section>
+        {/* <section>
           <Link className="botonesHeader" to="/Detail">Detalle</Link>
-        </section>
-        <section>
+        </section> */}
+        {/* <section>
           <Link className="botonesHeader" to="/Buscador/:id">Buscador</Link>
-        </section>
+        </section> */}
       </article>
     </nav>
   );

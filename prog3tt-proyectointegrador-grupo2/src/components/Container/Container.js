@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Card from "../Card/Card";
+import Formulario from "../Formulario/Formulario";
 
 class Container extends Component {
   constructor() {
@@ -43,6 +44,7 @@ class Container extends Component {
     console.log(this.state.peliculasFavoritas);
     return (
       <React.Fragment>
+        <Formulario filtro ={(texto) => this.filtrarPelioSerie(texto)}/>
         <section className="seccionPeliSerie">
           {this.state.peliculas.map((unaPelicula, idx) => {
             if (idx < 5) {
