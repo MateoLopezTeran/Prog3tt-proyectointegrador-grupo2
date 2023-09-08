@@ -44,13 +44,15 @@ class Container extends Component {
     return (
       <React.Fragment>
         <section className="seccionPeliSerie">
-          {this.state.peliculas.slice(0,5).map((unaPelicula, idx) => (
-            <Card
+          {this.state.peliculas.map((unaPelicula, idx) => {
+            if (idx < 5) {
+              return (<Card
               key={unaPelicula.title + idx}
               datosPelicula={unaPelicula}
               borrar={(id) => this.borrar(id)}
-            />
-          ))}
+            />)
+            } else {return (null)}
+          })}
         </section>
         <button onClick={() => this.traerMas()}> Traer más </button>
       </React.Fragment>
