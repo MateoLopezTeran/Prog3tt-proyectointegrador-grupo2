@@ -13,17 +13,17 @@ class Formulario extends Component{
     guardarInput(evento){
       this.setState(
         {
-        valorInput: evento.target.value,
+        valorInput: evento.value,
         },
-        () => this.props.filtro(this.state.valorInput) 
+        () => this.peliculas.filtro(this.state.valorInput) 
       );
     }
     render(){
       return (
-        <form onSubmit={() => this.detenerDefault()}>
+        <form onSubmit={(evento) => this.detenerDefault(evento)}>
         <input
         type='text'
-        onChange={() => this.guardarInput()}
+        onChange={(evento) => this.guardarInput(evento)}
         value={this.state.valorInput}
         />
         </form>
