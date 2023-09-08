@@ -43,16 +43,16 @@ class Container extends Component {
     console.log(this.state.peliculasFavoritas);
     return (
       <React.Fragment>
-        <button onClick={() => this.traerMas()}> Traer más </button>
         <section className="seccionPeliSerie">
-          {this.state.peliculas.map((unaPelicula, idx) => (
+          {this.state.peliculas.slice(0,5).map((unaPelicula, idx) => (
             <Card
-              key={unaPelicula.name + idx}
+              key={unaPelicula.title + idx}
               datosPelicula={unaPelicula}
               borrar={(id) => this.borrar(id)}
             />
           ))}
         </section>
+        <button onClick={() => this.traerMas()}> Traer más </button>
       </React.Fragment>
     );
   }

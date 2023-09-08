@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 class Card extends Component {
     constructor(props) {
@@ -62,16 +63,15 @@ class Card extends Component {
     render() {
         return (
           <article className="peliOSerie">
-            {/* <Link to={`/peliculas/${this.props.datosPelicula.id}`}>
-              <img src={this.props.datosPelicula.poster_path} alt="" />
-            </Link> */}
             <h3>{this.props.datosPelicula.title}</h3>
-            <img src={this.props.datosPelicula.poster_path} alt="" />
+            <Link to={`/Detail/${this.props.datosPelicula.id}`}>
+              <img src={this.props.datosPelicula.poster_path} alt="imagen" />
+            </Link>
             <p className="linkADetalle">Ver más</p>
             <p className="linkADetalle" onClick={() => this.props.borrar(this.props.datosPelicula.id)}>
               Borrar
             </p>
-            <button onClick={() => this.agregarQuitarFavoritos()}>
+            <button className="linkADetalle" onClick={() => this.agregarQuitarFavoritos(this.props.datosPelicula.id)}>
               {this.state.textoFavoritos}
             </button>
           </article>
