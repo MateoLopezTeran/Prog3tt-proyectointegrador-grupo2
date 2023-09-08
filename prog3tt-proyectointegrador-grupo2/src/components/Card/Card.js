@@ -23,7 +23,7 @@ class Card extends Component {
     }
 
     agregarQuitarFavoritos() {
-        let arrayPeliculas = [this.props.datosPersonaje.id];
+        let arrayPeliculas = [this.props.datosPelicula.id];
         let peliculasConseguidas = localStorage.getItem("pelicula");
         let peliculasFinales = "";
     
@@ -65,7 +65,7 @@ class Card extends Component {
           <article className="peliOSerie">
             <h3>{this.props.datosPelicula.title}</h3>
             <Link to={`/Detail/${this.props.datosPelicula.id}`}>
-              <img className="poster" src={`https://image.tmdb.org/t/p/w500/${this.props.datosPelicula.poster_path}`} alt="imagen" />
+              <img className="poster" src={`https://image.tmdb.org/t/p/w500/${this.props.datosPelicula.poster_path}`} alt="imagenPelicula" />
             </Link>
             <p className="linkADetalle">Ver más</p>
             <p className="linkADetalle" onClick={() => this.props.borrar(this.props.datosPelicula.id)}>
