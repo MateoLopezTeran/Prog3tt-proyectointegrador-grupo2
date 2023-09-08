@@ -15,7 +15,7 @@ class Formulario extends Component{
         {
         valorInput: evento.value,
         },
-        () => this.props.filtro(this.state.valorInput) 
+        () => this.peliculas.filtro(this.state.valorInput) 
       );
     }
     render(){

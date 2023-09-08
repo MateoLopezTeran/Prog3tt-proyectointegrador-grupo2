@@ -31,9 +31,9 @@ class Container extends Component {
       });
   }
 
-   filtrarPelioSerie(){
+   filtrarPelioSerie(textoInput){
     let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
-        return pelicula.name.toLowerCase().includes();
+        return pelicula.name.toLowerCase().includes(textoInput.toLowerCase());
     })
     this.setState({
       peliculas: peliculasFiltradas
