@@ -7,6 +7,9 @@ function Navbar() {
     <nav>
       <article className="headerIzquierda">
         <section>
+          <img className="logoheader" src="../assets/images/LogoSolo.png" alt="Logo Empresa"/>
+        </section>
+        <section>
           <Link className="botonesHeader" to="/">Home</Link>
         </section>
         <section>
