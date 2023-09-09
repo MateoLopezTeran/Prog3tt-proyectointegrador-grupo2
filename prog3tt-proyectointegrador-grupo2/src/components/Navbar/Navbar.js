@@ -1,32 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import Formulario from "../Formulario/Formulario";
+import LogoSolo from "../../assets/LogoSolo.png"
 
 function Navbar() {
   return (
-    <nav>
-      <article className="headerIzquierda">
-        <section>
-          <img className="logoheader" src="../assets/images/LogoSolo.png" alt="Logo Empresa"/>
-        </section>
-        <section>
-          <Link className="botonesHeader" to="/">Home</Link>
-        </section>
-        <section>
-          <Link className="botonesHeader" to="/Favoritos">Favoritos</Link>
-        </section>
-        <Formulario/>
-        <section>
-        
-        </section>
-        {/* <section>
-          <Link className="botonesHeader" to="/Detail">Detalle</Link>
-        </section> */}
-        {/* <section>
-          <Link className="botonesHeader" to="/Buscador/:id">Buscador</Link>
-        </section> */}
-      </article>
-    </nav>
+    <header>
+      <section className = "headerIzquierda">
+        <img className="logoheader" src={LogoSolo} alt="Logo Empresa"/>
+        <a href="/" className="nombrepagina">
+          <h2 className="nombrepagina">Wawa Max</h2>
+        </a>
+      </section>
+
+      <nav className="headerDerecha">
+        <article className="linksHeader">
+            <a className="linkADetalle" href="./favoritos.html">Favoritos</a>
+            <a className="linkADetalle" href="./generos.html">Géneros</a>
+        </article>
+        <form className="formbusqueda" action="" method="get">
+            <input className="inputbusqueda" type="text" name="buscar" id="" placeholder="Película o Serie"/>
+            <button className="submitbtn" type="submit">Buscar</button>
+        </form>
+      </nav>
+    </header>
+    /* No esta terminado. Le falta los links */
   );
 }
 
