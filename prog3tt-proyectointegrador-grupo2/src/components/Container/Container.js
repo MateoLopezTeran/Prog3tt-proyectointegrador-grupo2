@@ -31,6 +31,15 @@ class Container extends Component {
       });
   }
 
+/*   verMas(id){
+    let verMasPeliculas = this.state.peliculas.filter(
+      (peliculas) => peliculas.id !== id
+    );
+    this.setState({
+      peliculas: peliculasFiltradas
+    }) 
+  } */
+
    filtrarPeliOSerie(textoInput){
     let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
         return pelicula.name.toLowerCase().includes(textoInput.toLowerCase());
@@ -40,14 +49,16 @@ class Container extends Component {
     })
   }
 
-  /* verTodas() {
+  verTodas() {
     fetch(this.state)
       .then((res) => res.json())
       .then((data) =>
-        
+      this.setState({
+        peliculas: data.results,
+      })
       )
       .catch();
-  } */
+  }
 
   render() {
     console.log(this.state.peliculasFavoritas);
@@ -60,6 +71,7 @@ class Container extends Component {
               key={unaPelicula.title + idx}
               datosPelicula={unaPelicula}
               borrar={(id) => this.borrarPeliOSerie(id)}
+              verMas={(id) => this.verMas(id)}
             />)
             } else {return (null)}
           })}

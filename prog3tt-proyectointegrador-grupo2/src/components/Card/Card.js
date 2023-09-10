@@ -67,10 +67,12 @@ class Card extends Component {
             <Link to={`/Detail/${this.props.datosPelicula.id}`}>
               <img className="poster" src={`https://image.tmdb.org/t/p/w500/${this.props.datosPelicula.poster_path}`} alt="imagenPelicula" />
             </Link>
-            <p className="linkADetalle">Ver más</p>
+            <p className="linkADetalle" onClick={() => this.props.button(this.props.datosPelicula.id)}>
+              Ver más
+              </p>
             <p className="linkADetalle" onClick={() => this.props.borrar(this.props.datosPelicula.id)}>
               Borrar
-            </p>
+              </p>
             <button className="linkADetalle" onClick={() => this.agregarQuitarFavoritos(this.props.datosPelicula.id)}>
               {this.state.textoFavoritos}
             </button>
