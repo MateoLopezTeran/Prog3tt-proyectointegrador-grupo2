@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Card from "../Card/Card";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 class Container extends Component {
   constructor() {
@@ -7,7 +8,6 @@ class Container extends Component {
     this.state = {
       peliculas: [],
       peliculasFavoritas: [],
-      nextUrl: "",
     };
   }
 
@@ -17,7 +17,6 @@ class Container extends Component {
       .then((data) =>
         this.setState({
           peliculas: data.results,
-          nextUrl: data.results.next,
         })
       )
       .catch();
@@ -41,17 +40,14 @@ class Container extends Component {
     })
   }
 
-  traerMas() {
-    fetch(this.state.nextUrl)
+  /* verTodas() {
+    fetch(this.state)
       .then((res) => res.json())
       .then((data) =>
-        this.setState({
-          peliculas: data.results.concat(this.state.peliculas),
-          nextUrl: data.results.next,
-        })
+        
       )
       .catch();
-  }
+  } */
 
   render() {
     console.log(this.state.peliculasFavoritas);
@@ -68,7 +64,7 @@ class Container extends Component {
             } else {return (null)}
           })}
         </section>
-        <button className="linkADetalle" onClick={() => this.traerMas()}> Traer más </button>
+        <Link className="linkADetalle" to="/VerTodas">Ver todas</Link>
       </React.Fragment>
     );
   }

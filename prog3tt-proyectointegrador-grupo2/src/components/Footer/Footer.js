@@ -6,7 +6,7 @@ function Footer() {
   return (
     <React.Fragment>
       <footer>
-        <p className="nuestrosnombres">Freixas, Manoukian y Lopez Teran</p>  
+        <p className="nuestrosnombres">Freixas, Augier y Lopez Teran</p>
         <p className="nuestrosnombres">2022 Wawa Max corp.</p>
         <img className="logofooter" src={LogoSolo} alt="Logo"/>
         <img className="logotmdb" src={logo_tmdb} alt=""/>

@@ -5,6 +5,7 @@ import Detail from "./screen/Detail/Detail";
 import Buscador from "./screen/Buscador/Buscador";
 import Favoritos from "./screen/Favoritos/Favoritos";
 import NoEncontrada from "./screen/NoEncontrada/NoEncontrada";
+import VerTodas from "./screen/VerTodas/VerTodas";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/Detail" component={Detail} />
         <Route path="/Favoritos" exact={true} component={Favoritos} />
         <Route path="/Buscador/:id" component={Buscador} />
+        <Route path="/VerTodas" exact={true} component={VerTodas} />
         <Route path="" component={NoEncontrada} />
       </Switch>
     </React.Fragment>
