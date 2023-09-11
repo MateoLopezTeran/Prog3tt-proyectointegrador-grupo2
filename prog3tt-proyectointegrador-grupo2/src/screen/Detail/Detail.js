@@ -23,17 +23,11 @@ class Detail extends Component{
     console.log(this.props);
     return (
     <React.Fragment>
-
-        {
-
-          this.state.pelicula ?
-
-
+        <h2>{this.state.pelicula.title}</h2>
+        {/* <h2>{this.state.pelicula}</h2> */}
+        {this.state.pelicula ?
         <img className="poster" src={`https://image.tmdb.org/t/p/w500/${this.state.pelicula.poster_path}`} alt="imagenPelicula" />
-        : <h2>cargando...</h2>
-        
-        
-        }
+        : <h2>cargando...</h2>}
     </React.Fragment>
   );
 }}
