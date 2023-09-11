@@ -32,14 +32,7 @@ class Container extends Component {
       });
   }
 
-   verMas(id){
-    let peliculasFiltradas = this.state.peliculas.filter(
-      (peliculas) => peliculas.id !== id
-    );
-    this.setState({
-      peliculas: peliculasFiltradas,
-    }) 
-  }
+  
 
    filtrarPeliOSerie(textoInput){
     let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
