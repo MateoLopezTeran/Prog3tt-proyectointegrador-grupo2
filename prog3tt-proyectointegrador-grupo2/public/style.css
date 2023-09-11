@@ -49,6 +49,7 @@ header{
     border: 0%;
     background-color: #1c1c1c;
     justify-content: space-between;
+    padding-bottom: 47px;
 }
 
 .headerIzquierda{
