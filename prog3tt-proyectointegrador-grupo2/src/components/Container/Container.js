@@ -9,6 +9,7 @@ class Container extends Component {
       peliculas: [],
       peliculasFavoritas: [],
     };
+
   }
 
   
@@ -21,6 +22,9 @@ class Container extends Component {
         })
       )
       .catch();
+      this.setState({
+        peliculas: this.props.array
+      })
   }
 
   borrarPeliOSerie(id) {
@@ -56,7 +60,6 @@ class Container extends Component {
 
   render() {
     console.log(this.props);
-    console.log(this.state.peliculasFavoritas);
     return (
       <React.Fragment>
         <section className="seccionPeliSerie">

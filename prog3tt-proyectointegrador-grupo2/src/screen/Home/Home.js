@@ -6,17 +6,25 @@ class Home extends Component {
   constructor(){
     super();
     this.state = {
-      peliculas: [],
-      peliculasFavoritas: [],
+      peliculasPopulares: [],
+      peliculasMasVistas: [],
     };
   }
 
   componentDidMount() {
-    fetch(this.props.url)
+    fetch('https://api.themoviedb.org/3/movie/popular?api_key=fd6a4e605ab941f2a77d6e640f54a48d&language=en-US&page=1')
       .then((res) => res.json())
       .then((data) =>
         this.setState({
-          peliculas: data.results,
+          peliculasPopulares: data.results,
+        })
+      )
+      .catch();
+      fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=fd6a4e605ab941f2a77d6e640f54a48d&language=en-US&page=1')
+      .then((res) => res.json())
+      .then((data) =>
+        this.setState({
+          peliculasMasVistas: data.results,
         })
       )
       .catch();
@@ -30,12 +38,12 @@ class Home extends Component {
           
           <h3 className="h3">Peliculas populares</h3>
           <section id="pelisPopulares" class="seccionPeliSerie"></section>
-          <Container url = 'https://api.themoviedb.org/3/movie/popular?api_key=fd6a4e605ab941f2a77d6e640f54a48d&language=en-US&page=1'/>
-  
+
+          {this.state.peliculasPopulares.length > 0 ? <Container array={this.state.peliculasPopulares}/> : <h3>Cargando...</h3>}
           <h3>Peliculas más vistas</h3>
           <section id="seriesPopulares" class="seccionPeliSerie"></section>
-          <Container url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=fd6a4e605ab941f2a77d6e640f54a48d&language=en-US&page=1'/>
-  
+          {this.state.peliculasMasVistas.length > 0 ? <Container array={this.state.peliculasMasVistas}/> : <h3>Cargando...</h3>}
+
       </React.Fragment>
     );
   }
