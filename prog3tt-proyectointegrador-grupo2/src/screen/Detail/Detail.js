@@ -52,7 +52,7 @@ class Detail extends Component{
         </section>
         
         <p className="descripcion_abajo">
-          <a href="/Favoritos" class="link_favoritos" id="botonFavoritosPelis">+ Agregar a favoritos</a>
+          <a href="/Favoritos" class="link_favoritos" id="botonFavoritosPelis">Agregar a favoritos</a>
         </p>
       </main>
     </React.Fragment>
