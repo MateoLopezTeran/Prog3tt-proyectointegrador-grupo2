@@ -31,14 +31,14 @@ class Container extends Component {
       });
   }
 
-/*   verMas(id){
-    let verMasPeliculas = this.state.peliculas.filter(
+   verMas(id){
+    let peliculasFiltradas = this.state.peliculas.filter(
       (peliculas) => peliculas.id !== id
     );
     this.setState({
-      peliculas: peliculasFiltradas
+      peliculas: peliculasFiltradas,
     }) 
-  } */
+  }
 
    filtrarPeliOSerie(textoInput){
     let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
