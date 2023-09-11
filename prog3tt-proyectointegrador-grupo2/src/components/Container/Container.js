@@ -3,14 +3,15 @@ import Card from "../Card/Card";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 class Container extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       peliculas: [],
       peliculasFavoritas: [],
     };
   }
 
+  
   componentDidMount() {
     fetch(this.props.url)
       .then((res) => res.json())
@@ -31,14 +32,14 @@ class Container extends Component {
       });
   }
 
-/*   verMas(id){
-    let verMasPeliculas = this.state.peliculas.filter(
+   verMas(id){
+    let peliculasFiltradas = this.state.peliculas.filter(
       (peliculas) => peliculas.id !== id
     );
     this.setState({
-      peliculas: peliculasFiltradas
+      peliculas: peliculasFiltradas,
     }) 
-  } */
+  }
 
    filtrarPeliOSerie(textoInput){
     let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
@@ -61,6 +62,7 @@ class Container extends Component {
   }
 
   render() {
+    console.log(this.props);
     console.log(this.state.peliculasFavoritas);
     return (
       <React.Fragment>
