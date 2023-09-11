@@ -14,7 +14,7 @@ function Navbar() {
 
       <nav className="headerDerecha">
         <article className="linksHeader">
-            <a className="linkADetalle" href="/Favoritos">Favoritos</a>
+            <a className="linkFavoritos" href="/Favoritos">Favoritos</a>
             <a className="linkADetalle" href="/VerTodas">Ver todas las peliculas populares</a>
             <a className="linkADetalle" href="/VerTodas">Ver todas las peliculas más vistas</a>
         </article>
