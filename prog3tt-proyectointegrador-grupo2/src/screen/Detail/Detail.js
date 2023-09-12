@@ -4,7 +4,7 @@ class Detail extends Component{
   constructor(props){
     super(props);
     this.state = {
-      pelicula: false
+      pelicula: []
     }
   }
 
@@ -21,6 +21,7 @@ class Detail extends Component{
 
   render(){
     console.log(this.props);
+    console.log(this.state.pelicula);
     return (
     <React.Fragment>
       <main className="detalle">
@@ -34,7 +35,7 @@ class Detail extends Component{
         
         <section className="contenido_principal">
           <article className="imagen_detalle">
-            {this.state.pelicula ?
+            {this.state.pelicula.length > 0 ?
             <img className="poster" src={`https://image.tmdb.org/t/p/w500/${this.state.pelicula.poster_path}`} alt="imagenPelicula" />
             : <h2>cargando...</h2>}
           </article>
@@ -43,11 +44,14 @@ class Detail extends Component{
             
             <p className="descripcion_abajo">{this.state.pelicula.runtime} minutos</p>
             <p className="descripcion_abajo">{this.state.pelicula.overview}</p>
-            {<p className="descripcion_abajo">Generos: {this.state.pelicula.genres.map((genres, i) => {
+              {this.state.pelicula.length > 0 ?
+            <p className="descripcion_abajo">{this.state.pelicula.genres.map((generos, i) => {
               return (
-                genres.name
+                generos = generos.name
               )
-          })}</p>}
+            })}</p>
+            : <h2>cargando...</h2>}
+              
           </article>
         </section>
         
