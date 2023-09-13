@@ -41,7 +41,7 @@ class Detail extends Component{
             
             <p className="descripcion_abajo">{this.state.pelicula.runtime} minutos</p>
             <p className="descripcion_abajo">{this.state.pelicula.overview}</p>
-              {this.state.pelicula.length > 0 ?
+              {this.state.pelicula && this.state.pelicula.length > 0 ?
             <p className="descripcion_abajo">{this.state.pelicula.genres.map((generos, i) => {
               return (
                 generos = generos.name

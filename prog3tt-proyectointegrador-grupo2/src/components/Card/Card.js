@@ -60,17 +60,6 @@ class Card extends Component {
         localStorage.setItem("pelicula", peliculasFinales);
       }
 
-    borrarPeliOSerie(id) {
-      let peliculasFiltradas = this.state.peliculas.filter(
-        (unaPelicula) => unaPelicula.id !== id
-      );
-      this.setState({
-        peliculas: peliculasFiltradas,
-      });
-    }
-
-  
-
     filtrarPeliOSerie(textoInput){
       let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
         return pelicula.name.toLowerCase().includes(textoInput.toLowerCase());
@@ -100,10 +89,10 @@ class Card extends Component {
             </Link>
             <p className="linkFavoritos" onClick={() => this.props.button(this.props.datosPelicula.id)}>
               Ver más
-              </p>
-            <p className="linkFavoritos" onClick={() => this.borrarPeliOSerie(this.props.datosPelicula.id)}>
-              Borrar
-              </p>
+            </p>
+            <p className="linkFavoritos" onClick={() => this.props.button(this.props.datosPelicula.id)}>
+              Ir a detalle
+            </p>
             <button className="linkFavoritos" onClick={() => this.agregarQuitarFavoritos(this.props.datosPelicula.id)}>
               {this.state.textoFavoritos}
             </button>

@@ -10,8 +10,9 @@ class Buscador extends Component {
     this.state = {
          
     }
+  }
     /* componentDidMount() {
-      fetch('')
+      fetch('https://api.themoviedb.org/3/movie/popular?api_key=fd6a4e605ab941f2a77d6e640f54a48d&language=en-US&page=1')
         .then((res) => res.json())
         .then((data) =>
           this.setState({
@@ -20,7 +21,7 @@ class Buscador extends Component {
         )
         .catch((err) => console.log(err));
     } */
-  }
+  
   render(){
   return (
     <React.Fragment>
