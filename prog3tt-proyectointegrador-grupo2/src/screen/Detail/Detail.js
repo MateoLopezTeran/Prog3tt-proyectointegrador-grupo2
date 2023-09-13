@@ -20,7 +20,6 @@ class Detail extends Component{
   }
 
   render(){
-    console.log(this.props);
     console.log(this.state.pelicula);
     return (
     <React.Fragment>
@@ -35,9 +34,7 @@ class Detail extends Component{
         
         <section className="contenido_principal">
           <article className="imagen_detalle">
-            {this.state.pelicula.length > 0 ?
             <img className="poster" src={`https://image.tmdb.org/t/p/w500/${this.state.pelicula.poster_path}`} alt="imagenPelicula" />
-            : <h2>cargando...</h2>}
           </article>
 
           <article className="texto_abajo_foto">
@@ -50,13 +47,13 @@ class Detail extends Component{
                 generos = generos.name
               )
             })}</p>
-            : <h2>cargando...</h2>}
+             : <h2>cargando...</h2>}
               
           </article>
         </section>
         
         <p className="descripcion_abajo">
-          <a href="/Favoritos" class="link_favoritos" id="botonFavoritosPelis">Agregar a favoritos</a>
+          <a href="/favoritos" class="link_favoritos" id="botonFavoritosPelis">Agregar a favoritos</a>
         </p>
       </main>
     </React.Fragment>

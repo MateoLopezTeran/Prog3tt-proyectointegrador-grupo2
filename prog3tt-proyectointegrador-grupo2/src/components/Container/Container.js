@@ -7,67 +7,19 @@ class Container extends Component {
     super(props);
     this.state = {
       peliculas: [],
-      peliculasFavoritas: [],
     };
 
   }
 
-  
-  componentDidMount() {
-    fetch(this.props.array)
-      .then((res) => res.json())
-      .then((data) =>
-        this.setState({
-          peliculas: data.results,
-        })
-      )
-      .catch();
-  }
-  
-
-  borrarPeliOSerie(id) {
-      let peliculasFiltradas = this.state.peliculas.filter(
-        (unaPelicula) => unaPelicula.id !== id
-      );
-      this.setState({
-        peliculas: peliculasFiltradas,
-      });
-  }
-
-  
-
-   filtrarPeliOSerie(textoInput){
-    let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
-        return pelicula.name.toLowerCase().includes(textoInput.toLowerCase());
-    })
-    this.setState({
-      peliculas: peliculasFiltradas
-    })
-  }
-
-  verTodas() {
-    fetch(this.state)
-      .then((res) => res.json())
-      .then((data) =>
-      this.setState({
-        peliculas: data.results,
-      })
-      )
-      .catch();
-  }
-
   render() {
-    console.log(this.props);
     return (
       <React.Fragment>
         <section className="seccionPeliSerie">
-          {this.state.peliculas.map((unaPelicula, idx) => {
+          {this.props.array.map((unaPelicula, idx) => {
             if (idx < 5) {
               return (<Card
               key={unaPelicula.title + idx}
               datosPelicula={unaPelicula}
-              borrar={(id) => this.borrarPeliOSerie(id)}
-              verMas={(id) => this.verMas(id)}
             />)
             } else {return (null)}
           })}
