@@ -60,15 +60,20 @@ class Card extends Component {
         localStorage.setItem("pelicula", peliculasFinales);
       }
 
-    filtrarPeliOSerie(textoInput){
+    /* filtrarPeliOSerie(textoInput){
       let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
-        return pelicula.name.toLowerCase().includes(textoInput.toLowerCase());
+      return pelicula.name.toLowerCase().includes(textoInput.toLowerCase());
       })
       this.setState({
         peliculas: peliculasFiltradas
       })
+    } */
+
+    verMas() {
+      let descripcionPelicula = this.props.datosPelicula.overview
+      return descripcionPelicula
     }
-  
+
     verTodas() {
       fetch(this.state)
         .then((res) => res.json())
@@ -87,12 +92,10 @@ class Card extends Component {
             <Link to={`/Detail/${this.props.datosPelicula.id}`}>
               <img className="poster" src={`https://image.tmdb.org/t/p/w500/${this.props.datosPelicula.poster_path}`} alt="imagenPelicula" />
             </Link>
-            <p className="linkFavoritos" onClick={() => this.props.button(this.props.datosPelicula.id)}>
+            <p className="linkFavoritos" onClick={() => this.verMas(this.props.datosPelicula.id)}>
               Ver más
             </p>
-            <p className="linkFavoritos" onClick={() => this.props.button(this.props.datosPelicula.id)}>
-              Ir a detalle
-            </p>
+            <Link className="linkFavoritos" to={`/Detail/${this.props.datosPelicula.id}`}>Ir a detalle</Link>
             <button className="linkFavoritos" onClick={() => this.agregarQuitarFavoritos(this.props.datosPelicula.id)}>
               {this.state.textoFavoritos}
             </button>
