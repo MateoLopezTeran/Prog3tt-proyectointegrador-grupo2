@@ -34,16 +34,13 @@ class Favoritos extends Component {
     
             <h1>Favoritos</h1>
             <section id="favoritosPelis" class="seccionPeliSerie"></section>
-            {/* {this.state.peliculas.map((unaPelicula, idx) => {
-            if (idx == favoritosPelis.length) {
+             {this.state.peliculas.map((unaPelicula, idx) => {
+            if (idx === favoritosPelis.length) {
               return (<Card
-              key={unaPelicula.title + idx}
               datosPelicula={unaPelicula}
-              borrar={(id) => this.borrarPeliOSerie(id)}
-              verMas={(id) => this.verMas(id)}
             />)
             } else {return (null)}
-          })} */}
+          })} 
             
             {this.state.favoritosPelis.length > 0 ? <Container array={this.state.favoritosPelis}/> : <h3>Cargando...</h3>}
 
