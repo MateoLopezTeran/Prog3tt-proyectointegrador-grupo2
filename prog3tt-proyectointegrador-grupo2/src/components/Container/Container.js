@@ -14,7 +14,7 @@ class Container extends Component {
 
   
   componentDidMount() {
-    fetch(this.props.url)
+    fetch(this.props.array)
       .then((res) => res.json())
       .then((data) =>
         this.setState({
@@ -22,10 +22,8 @@ class Container extends Component {
         })
       )
       .catch();
-      this.setState({
-        peliculas: this.props.array
-      })
   }
+  
 
   borrarPeliOSerie(id) {
       let peliculasFiltradas = this.state.peliculas.filter(
