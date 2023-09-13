@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Container from "../../components/Container/Container";
+import Card from "../../components/Card/Card";
 
 /* Recuperamos el Local Storage de las peliculas favoritas */
 let recupeStoragePelis = localStorage.getItem('favoritosPelis');
@@ -11,16 +12,17 @@ class Favoritos extends Component {
     constructor(props){
         super(props);
         this.state = {
-          pelicula: false
+            favoritosPelis : []
         }
       }
     
       componentDidMount() {
-        fetch()
+        
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=fd6a4e605ab941f2a77d6e640f54a48d&language=en-US&page=1')
           .then((res) => res.json())
           .then((data) =>
             this.setState({
-              pelicula: data,
+              peliculaFavorita: data,
             })
           )
           .catch((err) => console.log(err));
@@ -32,13 +34,22 @@ class Favoritos extends Component {
     
             <h1>Favoritos</h1>
             <section id="favoritosPelis" class="seccionPeliSerie"></section>
-            <Container/>
+            {/* {this.state.peliculas.map((unaPelicula, idx) => {
+            if (idx == favoritosPelis.length) {
+              return (<Card
+              key={unaPelicula.title + idx}
+              datosPelicula={unaPelicula}
+              borrar={(id) => this.borrarPeliOSerie(id)}
+              verMas={(id) => this.verMas(id)}
+            />)
+            } else {return (null)}
+          })} */}
+            
+            {this.state.favoritosPelis.length > 0 ? <Container array={this.state.favoritosPelis}/> : <h3>Cargando...</h3>}
+
             </React.Fragment>
-        );
-        
+        );    
     }
     }
-    
-console.log(favoritosPelis);
 
 export default Favoritos;
