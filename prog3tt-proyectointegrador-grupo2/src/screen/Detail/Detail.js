@@ -15,7 +15,7 @@ class Detail extends Component{
         this.setState({
           pelicula: data,
         }, () => console.log(data))
-      )
+      ) 
       .catch((err) => console.log(err));
   }
 

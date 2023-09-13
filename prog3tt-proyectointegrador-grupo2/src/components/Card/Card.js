@@ -7,7 +7,7 @@ class Card extends Component {
       this.state = {
         textoFavoritos: "Agregar a favoritos",
       };
-    }
+    } 
 
     componentDidMount() {
         let peliculasConseguidas = localStorage.getItem("pelicula");

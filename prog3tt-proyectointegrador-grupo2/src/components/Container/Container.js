@@ -22,9 +22,11 @@ class Container extends Component {
               datosPelicula={unaPelicula}
             />)
             } else {return (null)}
-          })}
+          })} 
         </section>
-        <Link className="linkADetalle" to="/VerTodas">Ver todas</Link>
+        <section className="seccionPeliSerie">
+        <Link className="linkADetalle" to="/VerTodas/popular">Ver todas</Link>
+        </section>
       </React.Fragment>
     );
   }

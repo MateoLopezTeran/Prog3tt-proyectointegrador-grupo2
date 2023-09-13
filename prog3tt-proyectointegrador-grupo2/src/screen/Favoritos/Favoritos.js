@@ -34,7 +34,7 @@ class Favoritos extends Component {
     
             <h1>Favoritos</h1>
             <section id="favoritosPelis" class="seccionPeliSerie"></section>
-             {this.state.peliculas.map((unaPelicula, idx) => {
+             {this.state.favoritosPelis.map((unaPelicula, idx) => {
             if (idx === favoritosPelis.length) {
               return (<Card
               datosPelicula={unaPelicula}

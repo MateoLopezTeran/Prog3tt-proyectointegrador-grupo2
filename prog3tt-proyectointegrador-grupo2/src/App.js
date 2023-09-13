@@ -18,7 +18,7 @@ function App() {
         <Route path="/Detail/:id" component={Detail} />
         <Route path="/favoritos" exact={true} component={Favoritos} />
         <Route path="/Buscador" component={Buscador} />
-        <Route path="/VerTodas" exact={true} component={VerTodas} />
+        <Route path="/VerTodas/:categoria" exact={true} component={VerTodas} />
         <Route path="" component={NoEncontrada} />
       </Switch>
 <Footer/>
