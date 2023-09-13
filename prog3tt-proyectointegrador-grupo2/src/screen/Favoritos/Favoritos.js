@@ -7,7 +7,7 @@ console.log(recupeStoragePelis);
 
 let favoritosPelis = JSON.parse(recupeStoragePelis);
 
-class Favoritos extends Component() {
+class Favoritos extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -21,7 +21,7 @@ class Favoritos extends Component() {
           .then((data) =>
             this.setState({
               pelicula: data,
-            }, () => console.log(data))
+            })
           )
           .catch((err) => console.log(err));
       }
