@@ -2,7 +2,7 @@
 .logotmdb{
     height: 50px;
     width: fit-content;
-    align-self: flex-end;
+    align-self: center;
     border-radius: 10px;
     margin: 10px;
 }
@@ -138,13 +138,13 @@ footer{
 
 .nuestrosnombres{
     font-family: 'Work Sans', sans-serif;
-    align-self: flex-end;
+    align-self: center;
     color: white;
     margin: 0px;
     margin-right: 1%;
 }
 .logofooter{
-    align-self: flex-end;
+    align-self: center;
     height: 30px;
     margin-bottom: 0%;
     margin-right: 1%;
@@ -712,4 +712,5 @@ footer{
     .tituloGenero{
         font-size: 60px;
     }
+
 }
