@@ -1,11 +1,27 @@
-import React from "react";
+import React, { Component } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import Container from "../../components/Container/Container";
 import Formulario from "../../components/Formulario/Formulario";
 
-function Buscador() {
-  
+class Buscador extends Component {
+  constructor(){
+    super();
+    this.state = {
+         
+    }
+    /* componentDidMount() {
+      fetch('')
+        .then((res) => res.json())
+        .then((data) =>
+          this.setState({
+            peliculaFavorita: data,
+          })
+        )
+        .catch((err) => console.log(err));
+    } */
+  }
+  render(){
   return (
     <React.Fragment>
         <Navbar/>
@@ -22,6 +38,7 @@ function Buscador() {
         <Footer/>
     </React.Fragment>
   );
+  }
 }
 
 export default Buscador;

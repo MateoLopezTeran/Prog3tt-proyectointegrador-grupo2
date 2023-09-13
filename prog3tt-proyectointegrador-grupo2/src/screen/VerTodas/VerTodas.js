@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Container from "../../components/Container/Container"
 
-class VerTodas extends Component{
+class VerTodas extends Component {
     constructor(props){
       super(props);
       this.state = {
