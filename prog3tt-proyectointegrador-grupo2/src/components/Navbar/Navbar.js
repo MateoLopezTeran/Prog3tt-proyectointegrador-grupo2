@@ -15,8 +15,8 @@ function Navbar() {
         <nav className="headerDerecha">
           <article className="linksHeader">
             <a className="linkFavoritos" href="/Favoritos">Favoritos</a>
-            <a className="linkADetalle" href="/VerTodas">Ver todas las peliculas populares</a>
-            <a className="linkADetalle" href="/VerTodas">Ver todas las peliculas más vistas</a>
+            <a className="linkADetalle" href="/VerTodasPop">Ver todas las peliculas populares</a>
+            <a className="linkADetalle" href="/VerTodasTop">Ver todas las peliculas más vistas</a>
           </article>
           <form className="formbusqueda" action="" method="get">
             <input className="inputbusqueda" type="text" name="buscar" id="" placeholder="Película o Serie"/>
