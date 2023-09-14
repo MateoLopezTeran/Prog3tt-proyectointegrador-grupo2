@@ -20,7 +20,7 @@ class Formulario extends Component{
     }
     render(){
       return (
-        <form onSubmit={(evento) => this.detenerDefault(evento)}>
+        <form onSubmit={(evento) => this.detenerDefault(evento)} action="/Buscador">
         <input
         type='text'
         onChange={(evento) => this.guardarInput(evento)}

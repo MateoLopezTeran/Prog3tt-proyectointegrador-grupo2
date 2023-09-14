@@ -12,13 +12,13 @@ class Buscador extends Component {
     };
     
   }
- 
+  
     componentDidMount() {
       fetch('https://api.themoviedb.org/3/movie/popular?api_key=fd6a4e605ab941f2a77d6e640f54a48d&language=en-US&page=1')
         .then((res) => res.json())
         .then((data) =>
           this.setState({
-            peliculaFavorita: data,
+            peliculasFiltradas: data,
           })
         )
         .catch((err) => console.log(err));
