@@ -4,7 +4,7 @@ import Card from "../../components/Card/Card";
 
 /* Recuperamos el Local Storage de las peliculas favoritas */
 let recupeStoragePelis = localStorage.getItem('favoritosPelis');
-console.log(recupeStoragePelis);
+/* console.log(recupeStoragePelis); */
 
 let favoritosPelis = JSON.parse(recupeStoragePelis);
 

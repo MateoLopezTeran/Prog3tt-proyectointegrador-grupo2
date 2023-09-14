@@ -13,9 +13,9 @@ class Formulario extends Component{
     guardarInput(evento){
       this.setState(
         {
-        valorInput: evento.value,
+        valorInput: evento.target.value,
         },
-        () => this.peliculas.filtro(this.state.valorInput) 
+        () => this.props.filtro(this.state.valorInput) 
       );
     }
     render(){

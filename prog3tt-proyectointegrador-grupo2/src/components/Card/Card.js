@@ -60,14 +60,14 @@ class Card extends Component {
         localStorage.setItem("pelicula", peliculasFinales);
       }
 
-    /* filtrarPeliOSerie(textoInput){
+    filtrarPeliOSerie(textoInput){
       let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
       return pelicula.name.toLowerCase().includes(textoInput.toLowerCase());
       })
       this.setState({
         peliculas: peliculasFiltradas
       })
-    } */
+    }
 
     verMas() {
       let descripcionPelicula = this.props.datosPelicula.overview
