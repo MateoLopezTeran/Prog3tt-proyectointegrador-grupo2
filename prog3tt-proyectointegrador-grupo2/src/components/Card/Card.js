@@ -6,6 +6,7 @@ class Card extends Component {
       super(props);
       this.state = {
         textoFavoritos: "Agregar a favoritos",
+        descripcion: ' '
       };
     } 
 
@@ -70,19 +71,15 @@ class Card extends Component {
     }
 
     verMas() {
-      let descripcionPelicula = this.props.datosPelicula.overview
-      return descripcionPelicula
-    }
-
-    verTodas() {
-      fetch(this.state)
-        .then((res) => res.json())
-        .then((data) =>
+      if (this.state.descripcion === 'Mostrar descripción') {
         this.setState({
-          peliculas: data,
+          descripcion: 'Esconder descripción'
         })
-        )
-        .catch();
+      } else {
+        this.setState({
+          descripcion: 'Mostrar descripción'
+        })
+      }
     }
 
     render() {
@@ -92,9 +89,10 @@ class Card extends Component {
             <Link to={`/Detail/${this.props.datosPelicula.id}`}>
               <img className="poster" src={`https://image.tmdb.org/t/p/w500/${this.props.datosPelicula.poster_path}`} alt="imagenPelicula" />
             </Link>
-            <p className="linkFavoritos" onClick={() => this.verMas(this.props.datosPelicula.id)}>
-              Ver más
-            </p>
+            <button className="linkFavoritos" onClick={() => this.verMas()}>
+            {this.state.descripcion === 'Mostrar descripción' ? 'Ver menos' : 'Ver más'}
+            </button>
+            {this.state.descripcion === 'Mostrar descripción' ? <p>{this.props.datosPelicula.overview}</p>: true}
             <Link className="linkFavoritos" to={`/Detail/${this.props.datosPelicula.id}`}>Ir a detalle</Link>
             <button className="linkFavoritos" onClick={() => this.agregarQuitarFavoritos(this.props.datosPelicula.id)}>
               {this.state.textoFavoritos}

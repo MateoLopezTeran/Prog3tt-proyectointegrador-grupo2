@@ -3,7 +3,7 @@ import Container from "../../components/Container/Container";
 import Card from "../../components/Card/Card";
 
 /* Recuperamos el Local Storage de las peliculas favoritas */
-let recupeStoragePelis = localStorage.getItem('favoritosPelis');
+let recupeStoragePelis = localStorage.getItem('pelicula');
 /* console.log(recupeStoragePelis); */
 
 let favoritosPelis = JSON.parse(recupeStoragePelis);
@@ -18,7 +18,7 @@ class Favoritos extends Component {
     
       componentDidMount() {
         
-        fetch('https://api.themoviedb.org/3/movie/popular?api_key=fd6a4e605ab941f2a77d6e640f54a48d&language=en-US&page=1')
+        fetch()
           .then((res) => res.json())
           .then((data) =>
             this.setState({
@@ -36,9 +36,7 @@ class Favoritos extends Component {
             <section id="favoritosPelis" class="seccionPeliSerie"></section>
              {this.state.favoritosPelis.map((unaPelicula, idx) => {
             if (idx === favoritosPelis.length) {
-              return (<Card
-              datosPelicula={unaPelicula}
-            />)
+              return (<Card/>)
             } else {return (null)}
           })} 
             

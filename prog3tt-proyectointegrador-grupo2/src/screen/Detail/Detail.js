@@ -4,7 +4,7 @@ class Detail extends Component{
   constructor(props){
     super(props);
     this.state = {
-      pelicula: []
+      pelicula: false
     }
   }
 
@@ -23,7 +23,8 @@ class Detail extends Component{
     console.log(this.state.pelicula);
     return (
     <React.Fragment>
-      <main className="detalle">
+      {this.state.pelicula ? 
+      <main>
         <section className="titulo_texto">
           <h1 className="titulo">{this.state.pelicula.title}</h1>
 
@@ -41,10 +42,10 @@ class Detail extends Component{
             
             <p className="descripcion_abajo">{this.state.pelicula.runtime} minutos</p>
             <p className="descripcion_abajo">{this.state.pelicula.overview}</p>
-              {this.state.pelicula && this.state.pelicula.length > 0 ?
-            <p className="descripcion_abajo">{this.state.pelicula.genres.map((generos, i) => {
+              {this.state.pelicula && this.state.pelicula.genres.length > 0 ?
+            <p className="descripcion_abajo">{this.state.pelicula.genres.map((generos) => {
               return (
-                generos = generos.name
+                <p className="link_botones_generos">{generos.name}</p>
               )
             })}</p>
              : <h2>cargando...</h2>}
@@ -56,6 +57,7 @@ class Detail extends Component{
           <a href="/favoritos" class="link_favoritos" id="botonFavoritosPelis">Agregar a favoritos</a>
         </p>
       </main>
+      : <h2>cargando...</h2>}
     </React.Fragment>
   );
 }}
