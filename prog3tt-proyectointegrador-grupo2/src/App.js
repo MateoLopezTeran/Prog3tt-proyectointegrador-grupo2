@@ -5,7 +5,8 @@ import Detail from "./screen/Detail/Detail";
 import Buscador from "./screen/Buscador/Buscador";
 import Favoritos from "./screen/Favoritos/Favoritos";
 import NoEncontrada from "./screen/NoEncontrada/NoEncontrada";
-import VerTodas from "./screen/VerTodas/VerTodas";
+import VerTodasPop from "./screen/VerTodas/VerTodasPop";
+import VerTodasTop from "./screen/VerTodas/VerTodasTop";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 
@@ -18,7 +19,8 @@ function App() {
         <Route path="/Detail/:id" component={Detail} />
         <Route path="/favoritos" exact={true} component={Favoritos} />
         <Route path="/Buscador" component={Buscador} />
-        <Route path="/VerTodas/:categoria" exact={true} component={VerTodas} />
+        <Route path="/VerTodasPop" exact={true} component={VerTodasPop} />
+        <Route path="/VerTodasTop" exact={true} component={VerTodasTop} />
         <Route path="" component={NoEncontrada} />
       </Switch>
       <Footer/>
