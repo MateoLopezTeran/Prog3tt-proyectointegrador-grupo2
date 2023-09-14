@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Card from "../Card/Card";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import Formulario from "../Formulario/Formulario";
 
 class Container extends Component {
   constructor(props) {
@@ -11,11 +12,24 @@ class Container extends Component {
 
   }
 
+  filtrarPeliOSerie(textoInput){
+    console.log(this.state.peliculasFiltradas);
+    let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
+    return pelicula.title.toLowerCase().includes(textoInput.toLowerCase());
+    })
+    this.setState({
+      peliculas: peliculasFiltradas
+    })
+  }
+
   render() {
     console.log(this.props);
     return (
       <React.Fragment>
+        <Formulario filtro={(evento)=>this.filtrarPeliOSerie(evento)}/>
+
         <section className="seccionPeliSerie">
+          
           {this.props.array.map((unaPelicula, idx) => {
             if (idx < 5) {
               return (<Card
