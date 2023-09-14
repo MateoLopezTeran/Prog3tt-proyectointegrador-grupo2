@@ -12,7 +12,7 @@ import Footer from "./components/Footer/Footer";
 function App() {
   return (
     <React.Fragment>
-<Navbar/>
+      <Navbar/>
       <Switch>
         <Route path="/" exact={true} component={Home} />
         <Route path="/Detail/:id" component={Detail} />
@@ -21,7 +21,7 @@ function App() {
         <Route path="/VerTodas/:categoria" exact={true} component={VerTodas} />
         <Route path="" component={NoEncontrada} />
       </Switch>
-<Footer/>
+      <Footer/>
     </React.Fragment>
   );
 }

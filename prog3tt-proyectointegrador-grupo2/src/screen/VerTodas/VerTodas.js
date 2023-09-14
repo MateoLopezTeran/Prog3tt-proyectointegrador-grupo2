@@ -26,8 +26,8 @@ class VerTodas extends Component{
     console.log(this.state.pelicula);
     return (
         <React.Fragment>
-            <h3 className="h3">Todas las Peliculas Populares</h3>
-            <section id="pelisPopulares" class="seccionPeliSerie"></section>
+            <h3 className="h3">Todas las Peliculas</h3>
+            <section class="seccionPeliSerie"></section>
             {this.state.pelicula.length > 0 ? <Container array={this.state.pelicula}/> : <h3>Cargando...</h3>}
         </React.Fragment>
     )

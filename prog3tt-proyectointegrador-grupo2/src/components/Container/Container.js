@@ -12,6 +12,7 @@ class Container extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <React.Fragment>
         <section className="seccionPeliSerie">
@@ -25,7 +26,7 @@ class Container extends Component {
           })} 
         </section>
         <section className="seccionPeliSerie">
-        <Link className="linkADetalle" to="/VerTodas/popular">Ver todas</Link>
+        <Link className="linkADetalle" to={`/VerTodas/${this.props}`}>Ver todas</Link> {/* incompleto */}
         </section>
       </React.Fragment>
     );
