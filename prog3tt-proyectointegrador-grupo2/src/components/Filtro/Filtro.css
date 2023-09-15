@@ -1,0 +1,22 @@
+.formbusqueda{
+    width: 100px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputbusqueda{
+    background-color: white;
+    border-radius: 50px;
+    border-color: transparent;
+    font-family: 'Work Sans', sans-serif;
+
+}
+
+.submitbtn{
+    background-color:#2C5364;
+    color: white;
+    border-radius: 50px;
+    border-color: transparent;
+    font-family: 'Work Sans', sans-serif;
+}

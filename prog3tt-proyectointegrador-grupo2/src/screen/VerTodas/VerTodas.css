@@ -12,6 +12,7 @@
     margin: 10px;
     padding-bottom: 10px;
     align-items: flex-end;
+    flex-wrap: wrap;
 }
 
 .linkadetalle{
@@ -27,4 +28,19 @@
     align-self: center;
     margin: 10px;
     text-decoration: none;
+}
+
+.formbusqueda{
+    width: 100px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputbusqueda{
+    background-color: white;
+    border-radius: 50px;
+    border-color: transparent;
+    font-family: 'Work Sans', sans-serif;
+
 }
