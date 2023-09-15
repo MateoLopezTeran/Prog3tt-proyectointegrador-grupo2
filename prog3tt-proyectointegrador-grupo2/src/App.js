@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./screen/Home/Home";
 import Detail from "./screen/Detail/Detail";
-import Buscador from "./components/Buscador/Buscador";
+import Buscador from "./screen/Buscador/Buscador";
 import Favoritos from "./screen/Favoritos/Favoritos";
 import NoEncontrada from "./screen/NoEncontrada/NoEncontrada";
 import VerTodasPop from "./screen/VerTodas/VerTodasPop";

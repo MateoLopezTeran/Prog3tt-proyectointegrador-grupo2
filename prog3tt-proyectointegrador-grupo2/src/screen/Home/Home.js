@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Container from "../../components/Container/Container";
+import Buscador from "../Buscador/Buscador";
 import './Home.css'
 
 

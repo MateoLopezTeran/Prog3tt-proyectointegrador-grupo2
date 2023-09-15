@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './Formulario.css'
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 class Formulario extends Component{
     constructor(props){
@@ -21,13 +22,14 @@ class Formulario extends Component{
     }
     render(){
       return (
-        <form onSubmit={(evento) => this.detenerDefault(evento)} action="/Buscador">
-        <input
-        type='text'
-        onChange={(evento) => this.guardarInput(evento)}
-        value={this.state.valorInput}
-        />
-        </form>
+      
+        <section className='Formulario'>
+            <form onSubmit={(evento) => this.evitarSubmit(evento)}>
+                <input className="input" type="text" placeholder="Buscar" onChange={(evento) =>this.guardarInput(evento)} value={this.state.busqueda}/>
+                <Link to = {`/Buscador/${this.state.busqueda}`}><button className='boton'>Buscar</button></Link>
+            </form>
+        </section>
+        
       );
     }
 }
