@@ -1,15 +1,30 @@
 import React, { Component } from "react";
 import './Detail.css'
 
-class Detail extends Component{
+class Detail extends Component {
   constructor(props){
     super(props);
     this.state = {
-      pelicula: false
-    }
+      id: this.props.match.params.id,
+      pelicula: false,
+      favoritos: [],
+    };
   }
 
   componentDidMount() {
+    let favoritosPelis = [];
+    let recupeStoragePelis = localStorage.getItem('peliculaFavorita');
+
+    if (recupeStoragePelis !== null) {
+      favoritosPelis = JSON.parse(recupeStoragePelis);
+      if (favoritosPelis.includes(this.state.id)) {
+        this.setState({
+     
+        });
+      }
+  }
+    
+
     fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=fd6a4e605ab941f2a77d6e640f54a48d&language=en-US&page=1`, )
       .then((res) => res.json())
       .then((data) =>
@@ -18,6 +33,36 @@ class Detail extends Component{
         }, () => console.log(data))
       ) 
       .catch((err) => console.log(err));
+  }
+  agregarAfavoritos(id){
+    let favoritosPelis = [];
+    let recupeStoragePelis = localStorage.getItem("Favoritos");
+
+    if (recupeStoragePelis !== null) {
+      favoritosPelis = JSON.parse(recupeStoragePelis);
+
+      if (favoritosPelis.includes(this.state.id)) {
+        //Si está el id en el array, sacarlo
+        favoritosPelis = favoritosPelis.filter(
+          (unId) => unId !== this.state.id
+        );
+        this.setState({
+          textoBotonFav: (
+            "Agregar a Favoritos"
+          )
+        });
+      } else {
+        favoritosPelis.push(this.state.id);
+        this.setState({
+          textoBotonFav: (
+            "Eliminar a Favoritos"
+          )
+        });
+      }
+    }
+    let favoritosPelisAString = JSON.stringify(favoritosPelis);
+    localStorage.setItem("favoritos", favoritosPelisAString);
+    console.log(localStorage);
   }
 
   render(){
@@ -55,13 +100,13 @@ class Detail extends Component{
         </section>
         
         <p className="descripcion_abajo">
-          <a href="/favoritos" class="link_favoritos" id="botonFavoritosPelis">Agregar a favoritos</a> {/* Hacer que funcione */}
+
         </p>
       </main>
       : <h2>cargando...</h2>}
-    </React.Fragment>
-  );
-}}
-  
+      </React.Fragment>
+    );
+  }
+}
 
 export default Detail;

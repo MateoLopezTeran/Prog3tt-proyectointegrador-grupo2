@@ -34,7 +34,7 @@ class VerTodasPop extends Component{
       pelicula: filtroPeliculas,
       filtro: true,
     });
-  };
+  }; */
 
   /* filtroPelis(textoInput) {
     let peliFiltradas = this.state.pelicula.filter((popular) => {

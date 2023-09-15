@@ -17,7 +17,7 @@ class Favoritos extends Component {
   }
 
   componentDidMount() { 
-    /* let arrayFavoritos = [] */
+    
     let arrayId = this.recuStorage()
 
     arrayId.map((id) => {
