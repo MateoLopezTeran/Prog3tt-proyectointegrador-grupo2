@@ -1,34 +1,67 @@
 import React, { Component } from "react";
-import Container from "../../components/Container/ContainerTodas";
+import Container from "../../components/Container/Container";
 import './VerTodas.css'
 
 class VerTodasPop extends Component{
   constructor(props){
     super(props);
     this.state = {
-      pelicula: []
+      pelicula: [],
+      filtro: false,
+      proximaPag: 1,
+
     }
   }
 
-  componentDidMount() {
-    console.log(this.props.match.params.categoria);
-    fetch('https://api.themoviedb.org/3/movie/popular?api_key=fd6a4e605ab941f2a77d6e640f54a48d&language=en-US&page=1')
+  traerMas() {
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=fd6a4e605ab941f2a77d6e640f54a48d&language=en-US&page=${this.state.proximaPag}`)
       .then((res) => res.json())
       .then((data) =>
         this.setState({
-          pelicula: data.results,
-        }, () => console.log(data))
+          pelicula: this.state.pelicula.concat(data.results),
+          proximaPag: data.page + 1
+        }, () => console.log(data.page + 1))
       ) 
       .catch((err) => console.log(err));
   }
 
+  filtrarPeliculas = (textoAFiltrar) => {
+    console.log(textoAFiltrar);
+    //  Desarrollar el método
+    let pelisFiltradas = this.state.peliculas.filter(function (unaPelicula) {
+      //tenemos que chequear si el texto a filtrar está dentro del nombre del personaje. Usemos la funcuión includes()
+      return unaPelicula.title
+        .toUpperCase()
+        .includes(textoAFiltrar.toUpperCase());
+    });
+    console.log(pelisFiltradas);
+
+    this.setState({
+      peliculas: pelisFiltradas,
+      filtraste: true,
+    });
+  };
+
+  componentDidMount() {
+    this.traerMas();
+    
+  }
+
   render(){
+    console.log(this.state.proximaPag);
     return (
         <React.Fragment>
-            <h3 className="h3">Peliculas Populares</h3>
-          <section id="pelisPopulares" class="seccionPeliSerie"></section>
-          {this.state.pelicula.length > 0 ? <Container array={this.state.pelicula} arrayPelis={this.state.pelicula}/> : <h3>Cargando...</h3>}
-          </React.Fragment>
+          <main>
+            {this.state.filtro ? (
+              <h2>Error de carga</h2>
+            ): (
+              <button className="linkadetalle" onClick={() => this.traerMas()}>Mostrar más</button>
+            )}
+            <h1 className="h1">Peliculas Populares</h1>
+            <section id="pelisPopulares" class="seccionPeliSerie"></section>
+            {this.state.pelicula.length > 0 ? <Container array={this.state.pelicula} arrayPelis={this.state.pelicula}/> : <h3>Cargando...</h3>}
+          </main>
+        </React.Fragment>
     )
 }
 }

@@ -31,7 +31,7 @@ class Container extends Component {
 
         <section className="seccionPeliSerie">
           {this.props.array.map((unaPelicula, idx) => {
-            if (this.props.CincoPelis) {
+            if (this.props.limitePelis) {
               if (idx < 5) {
                 return (<Card
                 key={unaPelicula.title + idx}

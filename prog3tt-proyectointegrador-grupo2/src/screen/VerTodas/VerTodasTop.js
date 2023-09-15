@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Container from "../../components/Container/ContainerTodas";
+import Container from "../../components/Container/Container";
 import './VerTodas.css'
 
 class VerTodasTop extends Component{
@@ -20,6 +20,18 @@ class VerTodasTop extends Component{
         }, () => console.log(data))
       ) 
       .catch((err) => console.log(err));
+  }
+
+  traerMas() {
+    //Traer la siguiente página de personajes
+    fetch(this.state.nextUrl)
+      .then((res) => res.json())
+      .then((data) =>
+        this.setState({
+          nextUrl: data.info.next,
+        })
+      )
+      .catch();
   }
 
   render(){

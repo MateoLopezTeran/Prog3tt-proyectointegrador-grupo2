@@ -44,7 +44,7 @@ class Favoritos extends Component {
     return (
       <main>
         {this.state.favoritosPelis.length > 0 ? (
-          <Container CincoPelis = {false} array = {this.state.favoritosPelis}/>
+          <Container limitePelis = {false} array = {this.state.favoritosPelis}/>
         ): (
           <h2>No hay favoritos</h2>
         )}
