@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './Formulario.css'
 
 class Formulario extends Component{
     constructor(props){

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './Detail.css'
 
 class Detail extends Component{
   constructor(props){
@@ -25,7 +26,7 @@ class Detail extends Component{
     <React.Fragment>
       {this.state.pelicula ? 
       <main>
-        <section className="titulo_texto">
+        <section>
           <h1 className="titulo">{this.state.pelicula.title}</h1>
 
           <article className="texto_arriba_foto">
@@ -54,7 +55,7 @@ class Detail extends Component{
         </section>
         
         <p className="descripcion_abajo">
-          <a href="/favoritos" class="link_favoritos" id="botonFavoritosPelis">Agregar a favoritos</a>
+          <a href="/favoritos" class="link_favoritos" id="botonFavoritosPelis">Agregar a favoritos</a> {/* Hacer que funcione */}
         </p>
       </main>
       : <h2>cargando...</h2>}

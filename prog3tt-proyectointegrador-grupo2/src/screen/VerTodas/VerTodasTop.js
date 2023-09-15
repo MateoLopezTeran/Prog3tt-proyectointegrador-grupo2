@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Container from "../../components/Container/ContainerTodas";
+import './VerTodas.css'
 
 class VerTodasTop extends Component{
   constructor(props){

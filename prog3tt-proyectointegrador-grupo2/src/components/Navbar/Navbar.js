@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import LogoSolo from "../../assets/LogoSolo.png"
 import Buscador from "../Buscador/Buscador";
-import Formulario from "../Formulario/Formulario";
+/* import Formulario from "../Formulario/Formulario"; */
+import './Navbar.css'
 
 function Navbar() {
   return (

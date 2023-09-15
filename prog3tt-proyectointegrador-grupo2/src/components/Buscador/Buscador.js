@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Container from "../Container/Container";
 import Formulario from "../Formulario/Formulario";
+import './Buscador.css'
 
 class Buscador extends Component {
   constructor(props){
@@ -24,7 +25,7 @@ class Buscador extends Component {
 
     filtrarPeliOSerie(textoInput){
       console.log(this.state.peliculasFiltradas);
-      let peliculasFiltradas = this.state.peliculasFiltradas.arrayPelisPopulares.filter(pelicula => {
+      let peliculasFiltradas = this.state.peliculasFiltradas.array.filter(pelicula => {
       return pelicula.title.toLowerCase().includes(textoInput.toLowerCase());
       })
       this.setState({
@@ -41,10 +42,6 @@ class Buscador extends Component {
         <h2>Peliculas parecidas a busqueda</h2>
         <section id="pelisPopulares" class="seccionPeliSerie"></section>
         <Container array= {this.state.peliculas}/>
-
-        <h2>Series parecidas a busqueda</h2>
-        <section id="seriesPopulares" class="seccionPeliSerie"></section>
-        <Container/>
 
       
     </React.Fragment>

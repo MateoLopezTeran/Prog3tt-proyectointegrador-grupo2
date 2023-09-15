@@ -1,0 +1,90 @@
+.titulo{
+    margin: 0px;
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+    font-size: 50px;
+    padding-top: 10px;
+}
+
+.texto_arriba_foto{
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+}
+
+.descripcion_arriba{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0px;
+    padding-bottom: 7px;
+    padding-left: 0px;
+}
+
+.contenido_principal{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imagen_detalle{ 
+    width: 325px; 
+}
+
+.poster{
+    height: 300px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.texto_abajo_foto{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    justify-content: space-around;
+    background-color: #1c1c1c88;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    justify-self: flex-end;
+}
+
+.descripcion_abajo{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+    width: 100%;
+    justify-content: flex-start;
+    font-family: 'Work Sans', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.link_botones_generos{
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
+    background-color: #2C5364;
+    border-radius: 10px;
+    padding: 6px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.link_favoritos{
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
+    background-color: #2C5364;
+    border-radius: 10px;
+    padding: 6px;
+    width: fit-content;
+}

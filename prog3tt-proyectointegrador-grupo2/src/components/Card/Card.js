@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import './Card.css';
 
 class Card extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class Card extends Component {
     } 
 
     componentDidMount() {
-        let peliculasConseguidas = localStorage.getItem("pelicula");
+        let peliculasConseguidas = localStorage.getItem("peliculaFavorita");
         if (peliculasConseguidas === null) {
           this.setState({
             textoFavoritos: "Agregar a favoritos",
@@ -25,7 +26,7 @@ class Card extends Component {
 
     agregarQuitarFavoritos() {
         let arrayPeliculas = [this.props.datosPelicula.id];
-        let peliculasConseguidas = localStorage.getItem("pelicula");
+        let peliculasConseguidas = localStorage.getItem("peliculaFavorita");
         let peliculasFinales = "";
     
         if (peliculasConseguidas === null) {
@@ -58,7 +59,7 @@ class Card extends Component {
           });
         }
     
-        localStorage.setItem("pelicula", peliculasFinales);
+        localStorage.setItem("peliculaFavorita", peliculasFinales);
       }
 
     filtrarPeliOSerie(textoInput){

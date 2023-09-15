@@ -1,6 +1,7 @@
 import React from "react";
 import LogoSolo from "../../assets/LogoSolo.png"
 import logo_tmdb from "../../assets/logo_tmdb.jpg"
+import './Footer.css'
 
 function Footer() {
   return (

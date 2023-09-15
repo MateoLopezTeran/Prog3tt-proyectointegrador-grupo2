@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Container from "../../components/Container/Container";
+import './Home.css'
 
 
 class Home extends Component {
@@ -39,13 +40,11 @@ class Home extends Component {
           <h3 className="h3">Peliculas populares</h3>
           <section id="pelisPopulares" class="seccionPeliSerie"></section>
 
-          {this.state.peliculasPopulares.length > 0 ? <Container array={this.state.peliculasPopulares} arrayPelisPopulares={this.state.peliculasPopulares} link={"Pop"}/> : <h3>Cargando...</h3>}
+          {this.state.peliculasPopulares.length > 0 ? <Container array={this.state.peliculasPopulares} CincoPelis = {true} link={"Pop"}/> : <h3>Cargando...</h3>}
           
           <h3>Peliculas más vistas</h3>
           <section id="seriesPopulares" class="seccionPeliSerie"></section>
-          {this.state.peliculasMasVistas.length > 0 ? <Container array={this.state.peliculasMasVistas} arrayPelisMasVistas={this.state.peliculasMasVistas} link={"Top"}/> : <h3>Cargando...</h3>}
-          {/* incompleto. Hay que ver si los nuevos arrays van */}
-
+          {this.state.peliculasMasVistas.length > 0 ? <Container array={this.state.peliculasMasVistas} CincoPelis = {true} link={"Top"}/> : <h3>Cargando...</h3>}
       </React.Fragment>
     );
   }

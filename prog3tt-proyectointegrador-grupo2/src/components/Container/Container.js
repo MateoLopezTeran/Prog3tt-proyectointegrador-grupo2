@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Card from "../Card/Card";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Formulario from "../Formulario/Formulario";
+import './Container.css';
 
 class Container extends Component {
   constructor(props) {
@@ -29,15 +30,20 @@ class Container extends Component {
         <Formulario filtro={(evento)=>this.filtrarPeliOSerie(evento)}/>
 
         <section className="seccionPeliSerie">
-          
           {this.props.array.map((unaPelicula, idx) => {
-            if (idx < 5) {
-              return (<Card
+            if (this.props.CincoPelis) {
+              if (idx < 5) {
+                return (<Card
+                key={unaPelicula.title + idx}
+                datosPelicula={unaPelicula}
+              />)
+            
+            } else {return (null)}
+            } else {return (<Card
               key={unaPelicula.title + idx}
               datosPelicula={unaPelicula}
             />)
-            } else {return (null)}
-          })} 
+          }})} 
         </section>
         <section className="seccionPeliSerie">
         <Link className="linkADetalle" to={`/VerTodas${this.props.link}`}>Ver todas</Link> {/* incompleto */}
