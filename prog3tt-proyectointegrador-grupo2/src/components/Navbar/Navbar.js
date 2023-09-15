@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import LogoSolo from "../../assets/LogoSolo.png"
-import Buscador from "../Buscador/Buscador";
-/* import Formulario from "../Formulario/Formulario"; */
+
 import './Navbar.css'
 
 function Navbar() {
@@ -21,7 +20,7 @@ function Navbar() {
             <a className="linkADetalle" href="/VerTodasPop">Ver todas las peliculas populares</a>
             <a className="linkADetalle" href="/VerTodasTop">Ver todas las peliculas más vistas</a>
           </article>
-          <Buscador/>
+          
         </nav>
       </header>
   );
