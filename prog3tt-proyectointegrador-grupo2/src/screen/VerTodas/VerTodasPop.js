@@ -34,16 +34,7 @@ class VerTodasPop extends Component{
       pelicula: filtroPeliculas,
       filtro: true,
     });
-  }; */
-
-  /* filtroPelis(textoInput) {
-    let peliFiltradas = this.state.pelicula.filter((popular) => {
-      return popular.title.toLowerCase().includes(textoInput.toLowerCase());
-    });
-    this.setState({
-      pelicula: peliFiltradas,
-    });
-  } */
+  }; 
 
   componentDidMount() {
     this.traerMas();
