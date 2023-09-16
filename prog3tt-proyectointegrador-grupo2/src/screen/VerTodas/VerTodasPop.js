@@ -45,7 +45,7 @@ class VerTodasPop extends Component{
         <React.Fragment>
           <main>
             <h1 className="h1">Peliculas Populares</h1>
-            <section id="pelisPopulares" class="seccionPeliSerie"></section>
+            <section class="seccionPeliSerie"></section>
             <Filtro handle = {this.filtroPelis}></Filtro>
             {this.state.pelicula.length > 0 ? <Container array={this.state.pelicula}/> : <h3>Cargando...</h3>}
             {this.state.filtro ? (
