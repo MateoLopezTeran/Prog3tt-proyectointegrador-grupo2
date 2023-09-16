@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Container from "../../components/Container/Container";
-import Buscador from "../Buscador/Buscador";
 import './Home.css'
+import Buscador from "../../components/Buscador/Buscador";
 
 
 class Home extends Component {
@@ -35,9 +35,10 @@ class Home extends Component {
   render(){
     return (
       <React.Fragment>
-          
           <h1>Wawa Max</h1>
           
+          <Buscador/>
+
           <h3 className="h3">Peliculas populares</h3>
           <section id="pelisPopulares" class="seccionPeliSerie"></section>
 

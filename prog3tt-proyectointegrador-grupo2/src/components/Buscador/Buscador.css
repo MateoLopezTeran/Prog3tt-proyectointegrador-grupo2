@@ -3,7 +3,6 @@
     font-size: 14px;
     display: flex;
     flex-direction: row;
-    margin-left: 15px;
 }
 
 .inputbusqueda{
@@ -20,5 +19,4 @@
     border-radius: 50px;
     border-color: transparent;
     font-family: 'Work Sans', sans-serif;
-    margin-left: 8px;
 }

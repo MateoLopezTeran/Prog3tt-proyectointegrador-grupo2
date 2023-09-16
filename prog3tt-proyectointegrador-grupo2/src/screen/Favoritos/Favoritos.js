@@ -12,8 +12,12 @@ class Favoritos extends Component {
   
   recuStorage() {
     let recupeStoragePelis = localStorage.getItem('peliculaFavorita');
-    let listaRecuperada = JSON.parse(recupeStoragePelis)
-    return listaRecuperada
+    let listaRecupe = JSON.parse(recupeStoragePelis)
+    if (listaRecupe == null) {
+      return []
+    } else {
+      return listaRecupe
+    }
   }
 
   componentDidMount() { 

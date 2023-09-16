@@ -1,39 +1,37 @@
-import React, { Component } from "react";
-import Container from "../Container/Container";
-import Formulario from "../Formulario/Formulario";
-import './Buscador.css'
+import React , {Component} from "react";
+import { Link } from "react-router-dom";
+import "./Buscador.css"
 
 class Buscador extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      valorInput: '',
-      peliculas: [],
-      peliculasFiltradas: []
-    };
+  constructor (props) {
+        super(props);
+        this.state={
+          input: '',
+          resultado: []
+        }
+    }
     
-  }
+    guardarInput(guardar){
+        this.setState({
+          valorInput: guardar.target.value
+        })
+    }
 
-  filtrarPeliOSerie(textoInput){
-    console.log(this.state.peliculasFiltradas);
-    let peliculasFiltradas = this.state.peliculasFiltradas.array.filter(pelicula => {
-    return pelicula.title.toLowerCase().includes(textoInput.toLowerCase());
-    })
-    this.setState({
-      peliculas: peliculasFiltradas
-    })
-  }
-  
-  render(){
-  return (
-    <React.Fragment>
-      <Formulario filtro={(evento)=>this.filtrarPeliOSerie(evento)}/>
-      <h2>Peliculas parecidas a busqueda</h2>
-      <section id="pelisPopulares" class="seccionPeliSerie"></section>
-      <Container array= {this.state.peliculas}/>
-    </React.Fragment>
-  );
-  }
+    prevenirDefault (detener){
+      detener.preventDefault();
+    }
+
+    render(){
+      return(
+        <form className="formbusqueda" action="./Resultados" method="get" onSubmit={(detener)=> this.prevenirDefault(detener)}>
+          <input className="inputbusqueda" name="buscador" type="text" placeholder="Buscar peliculas"
+            input={this.state.valorInput}
+            onChange={(guardar) => this.guardarInput(guardar)}/>
+          <Link to={`/Resultados/${this.state.valorInput}`}>
+            <button className="submitbtn" type="submit">Enviar</button>
+          </Link>
+        </form>
+      )
+    }
 }
-
 export default Buscador;

@@ -66,7 +66,7 @@ class Detail extends Component {
   }
 
   render(){
-    console.log(this.state.pelicula);
+    console.log(this.state.id);
     return (
     <React.Fragment>
       {this.state.pelicula ? 
