@@ -8,24 +8,24 @@ class Detail extends Component {
       id: this.props.match.params.id,
       pelicula: false,
       favoritos: [],
+      textoFavoritos: "Agregar a Favoritos",
     };
   }
 
   componentDidMount() {
-    let favoritosPelis = [];
     let recupeStoragePelis = localStorage.getItem('peliculaFavorita');
 
-    if (recupeStoragePelis !== null) {
-      favoritosPelis = JSON.parse(recupeStoragePelis);
-      if (favoritosPelis.includes(this.state.id)) {
-        this.setState({
-     
-        });
-      }
-  }
+    if (recupeStoragePelis === null) {
+      this.setState({
+        textoFavoritos: "Agregar a favoritos",
+      });
+    } else if (recupeStoragePelis.includes(this.state.pelicula.id)) {
+      this.setState({
+        textoFavoritos: "Quitar de favoritos",
+      });
+    }
     
-
-    fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=fd6a4e605ab941f2a77d6e640f54a48d&language=en-US&page=1`, )
+    fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=fd6a4e605ab941f2a77d6e640f54a48d&language=en-US&page=1`, )
       .then((res) => res.json())
       .then((data) =>
         this.setState({
@@ -34,34 +34,30 @@ class Detail extends Component {
       ) 
       .catch((err) => console.log(err));
   }
-  agregarAfavoritos(id){
+  agregarAfavoritos(){
     let favoritosPelis = [];
-    let recupeStoragePelis = localStorage.getItem("Favoritos");
+    let recupeStoragePelis = localStorage.getItem("peliculaFavorita");
 
     if (recupeStoragePelis !== null) {
       favoritosPelis = JSON.parse(recupeStoragePelis);
 
-      if (favoritosPelis.includes(this.state.id)) {
+      if (favoritosPelis.includes(this.state.pelicula.id)) {
         //Si está el id en el array, sacarlo
         favoritosPelis = favoritosPelis.filter(
-          (unId) => unId !== this.state.id
+          (unId) => unId !== this.state.pelicula.id
         );
         this.setState({
-          textoBotonFav: (
-            "Agregar a Favoritos"
-          )
+          textoFavoritos: "Agregar a Favoritos"
         });
       } else {
-        favoritosPelis.push(this.state.id);
+        favoritosPelis.push(this.state.pelicula.id);
         this.setState({
-          textoBotonFav: (
-            "Eliminar a Favoritos"
-          )
-        });
+          textoFavoritos: "Quitar de Favoritos"
+          });
       }
     }
     let favoritosPelisAString = JSON.stringify(favoritosPelis);
-    localStorage.setItem("favoritos", favoritosPelisAString);
+    localStorage.setItem("peliculaFavorita", favoritosPelisAString);
     console.log(localStorage);
   }
 
@@ -82,10 +78,10 @@ class Detail extends Component {
         <section className="contenido_principal">
           <article className="imagen_detalle">
             <img className="poster" src={`https://image.tmdb.org/t/p/w500/${this.state.pelicula.poster_path}`} alt="imagenPelicula" />
+            <button className="linkafavoritos" onClick={() => this.agregarAfavoritos(this.state.pelicula.id)}>{this.state.textoFavoritos}</button>
           </article>
 
           <article className="texto_abajo_foto">
-            
             <p className="descripcion_abajo">{this.state.pelicula.runtime} minutos</p>
             <p className="descripcion_abajo">{this.state.pelicula.overview}</p>
               {this.state.pelicula && this.state.pelicula.genres.length > 0 ?
