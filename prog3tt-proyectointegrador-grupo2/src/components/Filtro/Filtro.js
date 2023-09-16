@@ -18,17 +18,16 @@ class Filtro extends Component {
     this.setState(
       {
         input: evento.target.value,
-      },
-      () => console.log(this.state.input)
+      }
     );
   }
 
   render() {
     return (
-      <form className="formbusqueda" action="" onSubmit={(e) => this.envio(e)}>
-        <input classname="inputbusqueda" placeholder="Filter Movies" type="text" name="filtro"
-          onChange={(e) => this.reasignarInput(e)}
-          value={this.state.input}
+      <form className="formbusqueda" onSubmit={(filtrar) => this.envio(filtrar)}>
+        <input classname="inputbusqueda" type="text" placeholder="Filtrar peliculas"
+          onChange={(filtrar) => this.reasignarInput(filtrar)}
+          resultado={this.state.input}
         />
         <button className="submitbtn" type="submit">
           Filtrar

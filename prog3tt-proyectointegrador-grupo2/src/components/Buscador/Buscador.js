@@ -14,23 +14,23 @@ class Buscador extends Component {
     
   }
 
-    filtrarPeliOSerie(textoInput){
-      console.log(this.state.peliculasFiltradas);
-      let peliculasFiltradas = this.state.peliculasFiltradas.array.filter(pelicula => {
-      return pelicula.title.toLowerCase().includes(textoInput.toLowerCase());
-      })
-      this.setState({
-        peliculas: peliculasFiltradas
-      })
-    }
+  filtrarPeliOSerie(textoInput){
+    console.log(this.state.peliculasFiltradas);
+    let peliculasFiltradas = this.state.peliculasFiltradas.array.filter(pelicula => {
+    return pelicula.title.toLowerCase().includes(textoInput.toLowerCase());
+    })
+    this.setState({
+      peliculas: peliculasFiltradas
+    })
+  }
   
   render(){
   return (
     <React.Fragment>
-        <Formulario filtro={(evento)=>this.filtrarPeliOSerie(evento)}/>
-        <h2>Peliculas parecidas a busqueda</h2>
-        <section id="pelisPopulares" class="seccionPeliSerie"></section>
-        <Container array= {this.state.peliculas}/>
+      <Formulario filtro={(evento)=>this.filtrarPeliOSerie(evento)}/>
+      <h2>Peliculas parecidas a busqueda</h2>
+      <section id="pelisPopulares" class="seccionPeliSerie"></section>
+      <Container array= {this.state.peliculas}/>
     </React.Fragment>
   );
   }
