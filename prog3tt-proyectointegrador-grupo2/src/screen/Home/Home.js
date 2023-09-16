@@ -10,6 +10,7 @@ class Home extends Component {
     this.state = {
       peliculasPopulares: [],
       peliculasMasVistas: [],
+      estaCargando: true
     };
   }
 
@@ -37,7 +38,6 @@ class Home extends Component {
       <React.Fragment>
           
           <h1>Wawa Max</h1>
-          
           <h3 className="h3">Peliculas populares</h3>
           <section id="pelisPopulares" class="seccionPeliSerie"></section>
 
