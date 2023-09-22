@@ -3,7 +3,6 @@ import Container from "../../components/Container/Container";
 import './Home.css'
 import Buscador from "../../components/Buscador/Buscador";
 
-
 class Home extends Component {
   constructor(){
     super();
