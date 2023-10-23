@@ -13,6 +13,7 @@ import Resultados from "./screen/Resultados/Resultados";
 function App() {
   return (
     <React.Fragment>
+      holaaaaa
       <Navbar/>
       <Switch>
         <Route path="/" exact={true} component={Home} />
